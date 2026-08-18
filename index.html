@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Personal Admin Dashboard" />
   <title>Personal Admin Dashboard</title>
-
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
   <style>
     /* =========================================================
        DESIGN SYSTEM
@@ -3060,10 +3062,18 @@
 
 
   <script>
+const SUPABASE_URL = https://atukixfqlkbzvpzncxqr.supabase.co;
+const SUPABASE_PUBLISHABLE_KEY = sb_publishable_1SFpSbKrfFUfWWK6TVXhhw_q-vZcCc3;
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+    
     /* =========================================================
        APP STATE
        ========================================================= */
-
+    
     const appState = {
       currentPage: "dashboard",
       sidebarOpen: false,
